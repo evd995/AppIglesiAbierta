@@ -1,0 +1,26 @@
+<ion-view title="Comunidades">
+  <ion-nav-buttons side="right">
+    <div class="buttons">
+      <ion-icon class="top-icon" name="ios-funnel" ng-click="openFilter($event)"></ion-icon>
+      <ion-icon class="top-icon" name="ios-search" ng-click="openSearch($event)"></ion-icon>
+    </div>
+  </ion-nav-buttons>
+
+  <ion-content padding="true" class="has-header">
+    <ion-refresher pulling-text="Baja para refrescar..." on-refresh="cargarDatos()">
+    </ion-refresher>
+    <div class="spacer" style="width: 300px; height: 27.9931px;"></div>
+
+
+    <div class="list card comunidad-en-menu" style="margin-top: 0px !important;" ng-repeat="comunidad in comunidades | filterMenu: {tipo: queryData.interesSeleccionado, text: queryData.buscador, orden: queryData.orden, intereses: userData.intereses}">
+      <ion-item class="item-thumbnail-left comunidad-en-menu" ui-sref="comunidad({&quot;comunidad&quot;:&quot;&quot;+comunidad.$id+&quot;&quot;, ver_comentario: false})" on-hold="abrirOpciones(comunidad.$id)" ng-show="!comunidad.estaOculto">
+
+        <img src="{{comunidad.logo || logos.Default}}">
+        <h2>{{comunidad.titulo}}</h2>
+        <p>
+          {{formatTipo(comunidad.tipo)}}
+        </p>
+      </ion-item>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,24 @@
+<ion-view title="Inicio" id="page2">
+  <ion-content padding="true" class="has-header">
+    <ion-refresher pulling-text="Baja para refrescar..." on-refresh="loadAnuncios()">
+    </ion-refresher>
+    <h4 id="inicio-heading46" ng-show="destacados[0].titulo" style="color:#FFFFFF;font-weight:400;">Destacado de la semana</h4>
+    <div class="list card noticia-inicio" id="inicio-card21" ng-show="destacados[0].titulo" ng-repeat="header in destacados">
+      <ion-item class="item-thumbnail-left comunidad-en-menu" on-hold="showActionHeader(header.$id)" ng-click="openLink(header.tipo, header.enlace)">
+        <img src="{{header.imagen || logos.Default}}">
+        <h2>{{header.titulo}}</h2>
+        <div class="{{header.tipo}}">{{header.tipo}} </div>
+        <p style="white-space:normal;">{{getSubtitulo(header) | limitTo:50}}</p>
+      </ion-item>
+    </div>
+    <h4 id="inicio-heading6" style="color:#FFFFFF;font-weight:400;">Últimas Noticias</h4>
+    <div class="list card noticia-inicio" ng-repeat="anuncio in anuncios" ng-show="!destacadosID.includes(anuncio.$id)">
+      <ion-item class="item-thumbnail-left comunidad-en-menu" on-hold="showAction(anuncio.$id)" on-double-tap="showPopup()" ng-click="openLink(anuncio.tipo, anuncio.enlace)">
+        <img src="{{anuncio.imagen || logos.Default}}">
+        <h2>{{anuncio.titulo}}</h2>
+        <div class="{{anuncio.tipo}}">{{anuncio.tipo}} </div>
+        <p style="white-space:normal;">{{getSubtitulo(anuncio) | limitTo:50}}</p>
+      </ion-item>
+    </div>
+  </ion-content>
+</ion-view>

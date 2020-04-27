@@ -1,0 +1,15 @@
+<ion-view title="Editar Administradores" id="page33">
+  <ion-content padding="true" class="has-header">
+    <div id="editarAdministradores-markdown46" style="text-align:justify;" class="show-list-numbers-and-dots">
+      <p style="color:#FFFFFF;">Estos son los administradores de la comunidad/instancia. Se pueden tener como máximo 3 administradores.</p>
+    </div>
+    <div class="list card administrador-item" id="editarAdministradores-card217" ng-repeat="admin in administradores" on-hold="mostrarOpciones(admin.$id)">
+      <ion-item class="item-thumbnail-left" id="editarAdministradores-list-item32">
+        <img src="{{admin.imagen}}">
+        <h2>{{admin.nombre + " " + admin.apellido}}</h2>
+        <p>{{getEdad(admin.fecha_de_nacimiento)}}</p>
+      </ion-item>
+    </div>
+    <button id="editarAdministradores-button69" ng-click="goToAgregarAdministradores()" class="button button-balanced button-block">Asignar nuevo Administrador</button>
+  </ion-content>
+</ion-view>

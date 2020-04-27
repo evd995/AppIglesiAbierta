@@ -1,0 +1,19 @@
+<ion-view title="Administrar Ciudades" id="page38">
+  <ion-content padding="true" class="has-header">
+    <div id="administrarCiudades-markdown55" class="show-list-numbers-and-dots">
+      <p style="color:#FFFFFF;">Estas son las ciudades activas</p>
+    </div>
+    <div class="list card" id="administrarCiudades-card219" ng-repeat="ciudad in ciudades" on-hold="abrirOpciones(ciudad.$id)" ng-click="abrirOpciones(ciudad.$id)">
+      <h3 id="administrarCiudades-heading31" style="color:#000000;text-align:center;">{{ciudad.$id}}</h3>
+      <div id="administrarCiudades-markdown66" style="text-align:center;" class="show-list-numbers-and-dots">
+        <p style="color:#000000;">{{ciudad.metadata.region}}</p>
+      </div>
+      <div id="administrarCiudades-markdown71" ng-show="ciudad.estaOculto" style="text-align:center;" class="show-list-numbers-and-dots">
+        <p style="color:#FF0000;">
+          <strong>OCULTA</strong>
+        </p>
+      </div>
+    </div>
+    <a ui-sref="crearNuevaCiudad()" id="administrarCiudades-button97" class="button button-balanced button-block">Crear nueva ciudad</a>
+  </ion-content>
+</ion-view>

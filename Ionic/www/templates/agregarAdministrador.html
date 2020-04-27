@@ -1,0 +1,24 @@
+<ion-view title="Agregar Administrador" id="page25">
+  <ion-content padding="true" class="has-header">
+    <div id="agregarAdministrador-markdown61" class="show-list-numbers-and-dots">
+      <p style="color:#FBFBFB;">Para agregar a alguien como administrador haz click sobre la persona. Puedes buscar gente en base a su nombre y número de teléfono.</p>
+    </div>
+    <form id="agregarAdministrador-form19" class="list">
+      <label class="item item-input" id="agregarAdministrador-search6">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="Nombre" ng-model="queryData.nombre">
+      </label>
+      <label class="item item-input">
+        <i class="icon ion-ios-telephone placeholder-icon"></i>
+        <input type="search" placeholder="Número de teléfono" ng-model="queryData.phoneNumber">
+      </label>
+    </form>
+    <div class="list card administrador-item" ng-repeat="user in usuarios | filter: {ciudad: comunidad.ciudad, $: queryData.nombre, phoneNumber: queryData.phoneNumber}" ng-click="agregarAdministrador(user.$id)">
+      <ion-item class="item-thumbnail-left">
+        <img src="{{user.image || logos.DefaultUser}}">
+        <h2>{{user.nombre + " " +user.apellido}}</h2>
+        <p>{{getEdad(user.fecha_de_nacimiento)}} años</p>
+      </ion-item>
+    </div>
+  </ion-content>
+</ion-view>

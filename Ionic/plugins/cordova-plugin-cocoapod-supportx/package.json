@@ -1,0 +1,69 @@
+{
+  "_from": "cordova-plugin-cocoapod-supportx",
+  "_id": "cordova-plugin-cocoapod-supportx@1.7.3",
+  "_inBundle": false,
+  "_integrity": "sha512-G4HmVbtkj2o+AiA/Wms41JtNNKhsT9vTibC8A+BYKXtixzLY+yvtF+Rj++dGR/lAzGfm8/cwYkroYUSc4XKUiA==",
+  "_location": "/cordova-plugin-cocoapod-supportx",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-cocoapod-supportx",
+    "name": "cordova-plugin-cocoapod-supportx",
+    "escapedName": "cordova-plugin-cocoapod-supportx",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-cocoapod-supportx/-/cordova-plugin-cocoapod-supportx-1.7.3.tgz",
+  "_shasum": "87c11c7cdf3b6e3b17706bd4fddc43ff1e5bc104",
+  "_spec": "cordova-plugin-cocoapod-supportx",
+  "_where": "/Users/estebanvillalobos/App IglesiAbierta/iglesiAbierta6",
+  "bugs": {
+    "url": "https://github.com/dpa99c/cordova-plugin-cocoapods-support/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-cocoapod-supportx",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "dependencies": {
+    "lodash": "^4.17.2",
+    "q": "^1.5.1",
+    "semver": "^5.3.0",
+    "shelljs": "^0.7.5",
+    "xml2js": "^0.4.16"
+  },
+  "deprecated": false,
+  "description": "A Cordova/PhoneGap plugin to add support for Cocoapod dependencies.",
+  "devDependencies": {
+    "libxmljs": "^0.18.4"
+  },
+  "homepage": "https://github.com/dpa99c/cordova-plugin-cocoapods-support",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova:plugin",
+    "cocoapods",
+    "pod",
+    "pods",
+    "plugin"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-cocoapod-supportx",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dpa99c/cordova-plugin-cocoapods-support.git"
+  },
+  "scripts": {
+    "postversion": "node scripts/bump-plugin-xml.js; git add plugin.xml; git commit plugin.xml -m \"v${npm_package_version}\""
+  },
+  "version": "1.7.3"
+}

@@ -1,0 +1,86 @@
+<ion-view title="Conoce IglesiAbierta" id="page26">
+  <ion-content padding="false" class="has-header">
+    <div class="ciudad-de-acogida-banner">
+      <img src="{{pais.logo  || logos.Default}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+      <div class="ciudad-de-acogida-title">
+        <h3>IglesiAbierta</h3>
+        <p>Chile</p>
+      </div>
+    </div>
+    <div id="conoceIglesiAbierta-container14" class="contacto-body">
+      <div id="conoceIglesiAbierta-markdown28" class="show-list-numbers-and-dots">
+        <p style="color:#FFFFFF;">{{pais.descripcion}}</p>
+      </div>
+      <h4 id="conoceIglesiAbierta-heading17" style="color:#FFFFFF;">Visión</h4>
+      <div id="conoceIglesiAbierta-markdown29" class="show-list-numbers-and-dots">
+        <p style="color:#FFFFFF;">{{pais.vision}}</p>
+      </div>
+      <h4 id="conoceIglesiAbierta-heading18" style="color:#FFFFFF;">Misión</h4>
+      <div id="conoceIglesiAbierta-markdown27" class="show-list-numbers-and-dots">
+        <p style="color:#FFFFFF;">{{pais.mision}}</p>
+      </div>
+      <h4 id="conoceIglesiAbierta-heading19" style="color:#FFFFFF;">Datos al día de hoy</h4>
+      <div class="list card contacto-card" id="conoceIglesiAbierta-card210">
+        <div id="conoceIglesiAbierta-markdown32" style="text-align:center;" class="show-list-numbers-and-dots">
+          <p style="color:#FFFFFF;">Ciudades de acogida
+            <strong>1240</strong>
+          </p>
+        </div>
+      </div>
+      <div class="list card contacto-card" id="conoceIglesiAbierta-card211">
+        <div id="conoceIglesiAbierta-markdown33" style="text-align:center;" class="show-list-numbers-and-dots">
+          <p style="color:#FFFFFF;">Personas en IglesiAbierta
+            <strong>1240</strong>
+          </p>
+        </div>
+      </div>
+      <div class="list card contacto-card" id="conoceIglesiAbierta-card212">
+        <div id="conoceIglesiAbierta-markdown34" style="text-align:center;" class="show-list-numbers-and-dots">
+          <p style="color:#FFFFFF;">Comunidades Juveniles
+            <strong>{{pais.contador_comunidades || 0}}</strong>
+          </p>
+        </div>
+      </div>
+      <div class="list card contacto-card" id="conoceIglesiAbierta-card213">
+        <div id="conoceIglesiAbierta-markdown35" style="text-align:center;" class="show-list-numbers-and-dots">
+          <p style="color:#FFFFFF;">Voluntariados
+            <strong>{{pais.contador_voluntariados || 0}}</strong>
+          </p>
+        </div>
+      </div>
+      <div class="list card contacto-card" id="conoceIglesiAbierta-card214">
+        <div id="conoceIglesiAbierta-markdown36" style="text-align:center;" class="show-list-numbers-and-dots">
+          <p style="color:#FFFFFF;">Eventos y formaciones
+            <strong>{{pais.contador_eventos || 0}}</strong>
+          </p>
+        </div>
+      </div>
+      <div class="list card contacto-card">
+        <div style="text-align:center;" class="show-list-numbers-and-dots">
+          <p style="color:#FFFFFF;">Vida Cotidiana
+            <strong>{{pais.contador_vida_cotidiana || 0}}</strong>
+          </p>
+        </div>
+      </div>
+      <div>
+        <h4 style="color:#FFFFFF;">
+          Datos de Contacto
+        </h4>
+
+        <div class="list card administrador-item" ui-sref="perfil({userID:coordinador.$id})">
+          <ion-item class="item-thumbnail-left">
+            <img src="{{coordinador.image || logos.DefaultUser}}">
+            <h2>{{coordinador.nombre + " " + coordinador.apellido}}</h2>
+            <p>Coordinador</p>
+          </ion-item>
+        </div>
+      </div>
+      <h4 id="conoceIglesiAbierta-heading37" style="color:#FFFFFF;">Créditos</h4>
+      <div id="conoceIglesiAbierta-markdown51" class="show-list-numbers-and-dots">
+        <p style="color:#FFFFFF;">Desarrollo de aplicación: Esteban Villalobos (egvillalobos@uc.cl)</p>
+
+        <p style="color:#FFFFFF;">Diseñadora: </p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

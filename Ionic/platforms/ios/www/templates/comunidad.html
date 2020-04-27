@@ -1,0 +1,114 @@
+<ion-view title="Comunidad" id="page9">
+  <ion-content padding="true" class="has-header">
+    <div class="list card" id="comunidad-card220" ng-show="ver_comentario">
+      <h5 id="comunidad-heading47" style="color:#000000;">Comentario</h5>
+      <div id="comunidad-markdown60" class="show-list-numbers-and-dots">
+        <p style="color:#000000;">{{comunidad.comentario}}</p>
+      </div>
+    </div>
+    <div class="row comunidad-header">
+      <div class="col" ng-click="bigImage()" on-hold="bigImage()">
+        <img src="{{comunidad.logo || logos.Default}}" style="display: block; width: 70px; height: 70px; margin-left: auto; margin-right: auto; border-radius:5%;">
+      </div>
+      <div class="col col-75">
+        <h4>{{comunidad.titulo}}</h4>
+        <p>{{formatTipo(comunidad.tipo)}}</p>
+        <div class="row" ng-show="comunidad.premium_miembros">
+          <div class="col">
+            <button class="comunidad-ser-parte button button-small button-light button-block">Soy parte</button>
+          </div>
+          <div class="col">
+            <button class="comunidad-ser-parte button button-small button-light button-block">Seguir</button>
+          </div>
+          <div class="col">
+            <ion-icon name="calendar"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" ng-show="comunidad.premium_banner">
+      <div class="col col-20 card comunidad-datos">
+        <p>Años</p>
+        <h5>{{getEdad()}}</h5>
+      </div>
+      <div class="col card comunidad-datos">
+        <p>Participacion</p>
+        <h5>{{comunidad.participacion}}</h5>
+      </div>
+      <div class="col card comunidad-datos">
+        <p>Edad Promedio</p>
+        <h5>{{comunidad.edadPromedio}}</h5>
+      </div>
+      <div class="col card comunidad-datos">
+        <p>Ingreso</p>
+        <h5>{{comunidad.ingreso}}</h5>
+      </div>
+    </div>
+    <div id="comunidad-container3">
+      <div class="comunidad-descripcion">
+        <!-- Info Horario y direccion -->
+        <div class="row">
+          <div class="col">
+            <h5> Horario:
+              <ion-icon style="font-size: 2em; vertical-align: middle;"></ion-icon>
+            </h5>
+            <p ng-repeat="dia in dias" ng-if="dia.value" style="margin-bottom: 0px;">
+              {{dia.value}}
+            </p>
+            <p ng-show="!registroDia">No hay horarios registrados</p>
+          </div>
+          <div class="col" ng-click="abrirMapa()" ng-show="comunidad.direccion">
+            <div>
+              <h5> Dirección:
+                <ion-icon style="font-size: 2em; vertical-align: middle;" ng-src="{{logos.GoogleMaps}}"></ion-icon>
+              </h5>
+
+            </div>
+            <p>{{comunidad.direccion}}</p>
+          </div>
+        </div>
+        <!-- Info de descripción -->
+        <div>
+          <div class="row">
+            <div class="col">
+              <h5>Descripción:</h5>
+              <p>{{comunidad.descripcion}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="spacer" style="width: 300px; height: 19px;"></div>
+      <div id="comunidad-container16" class="comunidad-redes-sociales-container">
+        <h5 id="comunidad-heading8" style="color:#FFFFFF;font-weight:600;">Plataformas Digitales</h5>
+        <div id="comunidad-container8" class="card comunidad-redes-sociales">
+          <ion-scroll direction="x">
+            <div class="row">
+              <!-- Center contents -->
+              <div style="float: none; margin: auto auto;">
+                <img ng-src="{{logos.Whatsapp}}" href-inappbrowser="{{&quot;https://wa.me/&quot; + comunidad.whatsapp}}" ng-if="comunidad.whatsapp">
+
+                <img ng-src="{{logos.Instagram}}" href-inappbrowser="{{&quot;https://www.instagram.com/&quot; + comunidad.instagram}}" ng-if="comunidad.instagram">
+
+                <img ng-src="{{logos.Facebook}}" href-inappbrowser="{{&quot;https://m.facebook.com/&quot; + comunidad.facebook}}" ng-if="comunidad.facebook">
+
+                <img ng-src="{{logos.Youtube}}" href-inappbrowser="{{cleanUrl(comunidad.youtube)}}" ng-show="comunidad.youtube">
+
+                <img ng-src="{{logos.Web}}" href-inappbrowser="{{cleanUrl(comunidad.web)}}" ng-if="comunidad.web">
+
+                <img ng-src="{{logos.Twitter}}" href-inappbrowser="{{&quot;https://www.twitter.com/&quot; + comunidad.twitter}}" ng-show="comunidad.twitter">
+
+                <img ng-src="{{logos.Spotify}}" href-inappbrowser="{{cleanUrl(comunidad.spotify)}}" ng-if="comunidad.spotify">
+
+                <img ng-src="{{logos.WhatsappGroup}}" href-inappbrowser="{{comunidad.whatsapp_group}}" ng-if="comunidad.whatsapp_group">
+
+                <img ng-src="{{logos.Correo}}" href-inappbrowser="mailto:{{comunidad.email}}" ng-if="comunidad.email">
+
+                <img ng-src="{{logos.Phone}}" href-inappbrowser="tel:{{comunidad.phone}}" ng-if="comunidad.phone">
+              </div>
+            </div>
+          </ion-scroll>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

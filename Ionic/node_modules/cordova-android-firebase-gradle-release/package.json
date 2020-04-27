@@ -1,0 +1,41 @@
+{
+  "_from": "cordova-android-firebase-gradle-release",
+  "_id": "cordova-android-firebase-gradle-release@4.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-twZvTYUTEWgvChEm0CweNKF59Wy1Q6p399EKqhlLq/oEEHIJaeeRSWhCtD52bYgq2Yl1zOrVmO7sc6H0RHdEWw==",
+  "_location": "/cordova-android-firebase-gradle-release",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-android-firebase-gradle-release",
+    "name": "cordova-android-firebase-gradle-release",
+    "escapedName": "cordova-android-firebase-gradle-release",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-android-firebase-gradle-release/-/cordova-android-firebase-gradle-release-4.0.0.tgz",
+  "_shasum": "713f446f042563a1b354b5c0ae9ce1a65cb53637",
+  "_spec": "cordova-android-firebase-gradle-release",
+  "_where": "/Users/estebanvillalobos/App IglesiAbierta/iglesiAbierta6",
+  "author": {
+    "name": "Dave Alden"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "q": "^1.4.1",
+    "semver": "5.6.0",
+    "xml2js": "^0.4.16"
+  },
+  "deprecated": false,
+  "description": "Cordova/Phonegap plugin for Android to align versions of the Firebase library components specified by other plugins to a specific version.",
+  "devDependencies": {},
+  "license": "MIT",
+  "name": "cordova-android-firebase-gradle-release",
+  "version": "4.0.0"
+}

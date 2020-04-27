@@ -1,0 +1,102 @@
+<ion-view title="Editar Ciudad" id="page34">
+  <ion-content padding="true" class="has-header">
+    <form id="editarCiudad-form15" class="list">
+      <div>
+        <img src="{{ data.image }}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+      </div>
+      <button id="editarCiudad-button70" ng-click="getImage()" class="button button-positive button-block">Subir foto</button>
+      <h3 id="editarCiudad-heading36" style="color:#FFFFFF;">{{ciudad.$id}}</h3>
+      <h4 id="editarCiudad-heading38" style="color:#FFFFFF;">{{ciudad.metadata.region}}</h4>
+      <h4 id="editarCiudad-heading26" style="color:#FFFFFF;">Datos de la ciudad</h4>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Descripción</span>
+        <textarea placeholder="" ng-model="ciudad.descripcion"></textarea>
+      </label>
+      <label class="item item-input item-stacked-label" id="editarCiudad-input20">
+        <span class="input-label">Habitantes</span>
+        <input type="text" placeholder="" ng-model="ciudad.habitantes">
+      </label>
+      <label class="item item-input item-stacked-label" id="editarCiudad-input21">
+        <span class="input-label">Institutos de educación superior</span>
+        <input type="text" placeholder="" ng-model="ciudad.institutos_educacion_superior">
+      </label>
+      <label class="item item-input item-stacked-label" id="editarCiudad-input22">
+        <span class="input-label">Jóvenes en educación superior</span>
+        <input type="text" placeholder="" ng-model="ciudad.jovenes_educacion_superior">
+      </label>
+      <div class="spacer" style="width: 300px; height: 32.9931px;"></div>
+      <div>
+        <h4 style="color:#FFFFFF;">Coordinador</h4>
+
+        <select ng-model="ciudad.coordinador">
+          <option value="">Seleccionar coordinador</option>
+          <option ng-repeat="admin in administradores" value="{{admin.$id}}">{{admin.nombre + " " + admin.apellido}}</option>
+        </select>
+      </div>
+      <div class="spacer" style="width: 300px; height: 21.9931px;"></div>
+      <h4 id="editarCiudad-heading27" style="color:#FFFFFF;">Plataformas de contacto</h4>
+      <div class="plataformas-de-contacto creacion_datos">
+        <label class="item item-input">
+          <ion-icon ng-src="{{logos.Whatsapp}}">
+          </ion-icon>
+          <input class="input-nueva-comunidad" type="text" placeholder="Ej: 569xxxxxxxx (solo números)" ng-model="ciudad.whatsapp">
+        </label>
+
+        <label class="item item-input">
+          <ion-icon ng-src="{{logos.Instagram}}">
+          </ion-icon>
+          <input class="input-nueva-comunidad" type="text" placeholder="Instagram (sin @)" ng-model="ciudad.instagram">
+        </label>
+
+        <label class="item item-input">
+          <ion-icon ng-src="{{logos.Facebook}}">
+          </ion-icon>
+          <input class="input-nueva-comunidad" type="text" placeholder="Página de Facebook" ng-model="ciudad.facebook">
+        </label>
+
+        <label class="item item-input">
+          <ion-icon ng-src="{{logos.Correo}}">
+          </ion-icon>
+          <input class="input-nueva-comunidad" type="text" placeholder="Correo" ng-model="ciudad.email">
+        </label>
+
+        <label class="item item-input">
+          <ion-icon ng-src="{{logos.Youtube}}">
+          </ion-icon>
+          <input class="input-nueva-comunidad" type="text" placeholder="Ej: www.youtube.com/channel/ejemplo" ng-model="ciudad.youtube">
+        </label>
+
+        <label class="item item-input">
+          <ion-icon ng-src="{{logos.Web}}">
+          </ion-icon>
+          <input class="input-nueva-comunidad" type="text" placeholder="Página Web" ng-model="ciudad.pagina_web">
+        </label>
+
+        <label class="item item-input">
+          <ion-icon ng-src="{{logos.Twitter}}">
+          </ion-icon>
+          <input class="input-nueva-comunidad" type="text" placeholder="Twitter" ng-model="ciudad.twitter">
+        </label>
+
+        <label class="item item-input">
+          <ion-icon ng-src="{{logos.Spotify}}">
+          </ion-icon>
+          <input class="input-nueva-comunidad" type="text" placeholder="Link a Spotify" ng-model="ciudad.spotify">
+        </label>
+
+        <label class="item item-input">
+          <ion-icon ng-src="{{logos.WhatsappGroup}}">
+          </ion-icon>
+          <input class="input-nueva-comunidad" type="text" placeholder="Link de Grupo de Whatsapp" ng-model="ciudad.whatsapp_group">
+        </label>
+
+        <label class="item item-input">
+          <ion-icon ng-src="{{logos.Phone}}">
+          </ion-icon>
+          <input class="input-nueva-comunidad" type="tel" placeholder="Ej: +569xxxxxxxx" ng-model="ciudad.phone">
+        </label>
+      </div>
+      <button id="editarCiudad-button101" ng-click="guardar()" class="button button-positive button-block">Guardar Datos</button>
+    </form>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,179 @@
+<ion-view title="{{titulo}}" id="page47">
+  <ion-content padding="true" class="has-header">
+    <div>
+      <img src="{{&nbsp;data.image }}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+    <form id="solicitarNuevoEvento-form18" class="list">
+      <p style="color:#FFFFFF;">
+        <strong>Nota</strong>: El ideal es que sea suba una foto cuadrada y de buena calidad
+
+      </p>
+      <button id="solicitarNuevoEvento-button116" ng-click="loadImage()" class="button button-stable button-block">Agregar foto</button>
+      <a ui-sref="agregarFotos({&quot;categoria&quot;:&quot;eventos&quot;,&quot;uid&quot;:&quot;&quot;+ comunidadID +&quot;&quot;})" class="button button-positive button-block">Agregar Más Fotos</a>
+      <h4 id="solicitarNuevoEvento-heading49" style="color:#FFFFFF;">Datos Básicos</h4>
+      <div id="solicitarNuevoEvento-markdown76" class="show-list-numbers-and-dots">
+        <p style="color:#FFFFFF;">* Requeridos </p>
+      </div>
+      <label class="item item-input item-stacked-label creacion_datos" id="solicitarNuevoEvento-input18">
+        <span class="input-label">Nombre*</span>
+        <input type="text" placeholder="" ng-model="postData.titulo">
+      </label>
+      <label class="item item-input item-stacked-label creacion_datos">
+        <span class="input-label">Descripción* (Máx. 200 caracteres)</span>
+        <textarea maxlength="200" placeholder="" rows="4" ng-model="postData.descripcion"></textarea>
+      </label>
+      <label class="item item-input item-stacked-label creacion_datos" id="solicitarNuevoEvento-input24">
+        <span class="input-label">Dirección</span>
+        <input type="text" placeholder="" ng-model="postData.direccion">
+      </label>
+      <label class="item item-input item-stacked-label creacion_datos" id="solicitarNuevoEvento-input25">
+        <span class="input-label">Fecha</span>
+        <input type="date" placeholder="" ng-model="data.fecha" ng-change="cambiarFecha()">
+      </label>
+      <label class="item item-input item-stacked-label creacion_datos" id="solicitarNuevoEvento-input26">
+        <span class="input-label">Link de inscripción</span>
+        <input type="text" placeholder="" ng-model="postData.link_inscripcion">
+      </label>
+      <label class="item item-input item-stacked-label creacion_datos">
+        <span class="input-label">Requisitos</span>
+        <textarea placeholder="" ng-model="postData.requisitos"></textarea>
+      </label>
+      <div>
+        <h4 style="color:#FFFFFF;">Prioridades</h4>
+        <p>(Máximo 3)</p>
+      </div>
+      <label class="item item-select" id="solicitarNuevoEvento-select18">
+        <span class="input-label">1er Interés</span>
+        <select ng-options="interes as interes for interes in intereses" ng-model="interesesData.actual[0]" ng-change="cambiarInteres(0)"></select>
+      </label>
+      <label class="item item-select" id="solicitarNuevoEvento-select19">
+        <span class="input-label">2do Interés</span>
+        <select ng-options="interes as interes for interes in intereses" ng-model="interesesData.actual[1]" ng-change="cambiarInteres(1)"></select>
+      </label>
+      <label class="item item-select" id="solicitarNuevoEvento-select20">
+        <span class="input-label">3er Interés</span>
+        <select ng-options="interes as interes for interes in intereses" ng-model="interesesData.actual[2]" ng-change="cambiarInteres(2)"></select>
+      </label>
+      <h4 id="solicitarNuevoEvento-heading50" style="color:#FFFFFF;">Plataformas de contacto</h4>
+      <div class="plataformas-de-contacto creacion_datos">
+        <label class="item item-input">
+          <ion-icon ng-src="{{logos.Whatsapp}}">
+          </ion-icon>
+          <input class="input-nueva-comunidad" type="text" placeholder="Ej: 569xxxxxxxx (solo números)" ng-model="postData.whatsapp">
+        </label>
+
+        <label class="item item-input">
+          <ion-icon ng-src="{{logos.Instagram}}">
+          </ion-icon>
+          <input class="input-nueva-comunidad" type="text" placeholder="Instagram (sin @)" ng-model="postData.instagram">
+        </label>
+
+        <label class="item item-input">
+          <ion-icon ng-src="{{logos.Facebook}}">
+          </ion-icon>
+          <input class="input-nueva-comunidad" type="text" placeholder="Facebook (nombre de usuario)" ng-model="postData.facebook">
+        </label>
+
+        <label class="item item-input">
+          <ion-icon ng-src="{{logos.Correo}}">
+          </ion-icon>
+          <input class="input-nueva-comunidad" type="text" placeholder="Correo" ng-model="postData.email">
+        </label>
+
+        <label class="item item-input">
+          <ion-icon ng-src="{{logos.Youtube}}">
+          </ion-icon>
+          <input class="input-nueva-comunidad" type="text" placeholder="Ej: www.youtube.com/channel/ejemplo" ng-model="postData.youtube">
+        </label>
+
+        <label class="item item-input">
+          <ion-icon ng-src="{{logos.Web}}">
+          </ion-icon>
+          <input class="input-nueva-comunidad" type="text" placeholder="Página Web" ng-model="postData.web">
+        </label>
+
+        <label class="item item-input">
+          <ion-icon ng-src="{{logos.Twitter}}">
+          </ion-icon>
+          <input class="input-nueva-comunidad" type="text" placeholder="Twitter" ng-model="postData.twitter">
+        </label>
+
+        <label class="item item-input">
+          <ion-icon ng-src="{{logos.Spotify}}">
+          </ion-icon>
+          <input class="input-nueva-comunidad" type="text" placeholder="Link a Spotify" ng-model="postData.spotify">
+        </label>
+
+        <label class="item item-input">
+          <ion-icon ng-src="{{logos.Whatsapp}}">
+          </ion-icon>
+          <input class="input-nueva-comunidad" type="text" placeholder="Link de Grupo de Whatsapp" ng-model="postData.whatsapp_group">
+        </label>
+
+        <label class="item item-input">
+          <ion-icon ng-src="{{logos.Phone}}">
+          </ion-icon>
+          <input class="input-nueva-comunidad" type="tel" placeholder="Ej: +569xxxxxxxx" ng-model="postData.phone">
+        </label>
+
+      </div>
+      <h4 id="solicitarNuevoEvento-heading51" style="color:#FFFFFF;">Banner</h4>
+      <label class="item item-input item-stacked-label" id="solicitarNuevoEvento-input27">
+        <span class="input-label">Edición</span>
+        <input type="number" placeholder="" ng-model="postData.edicion">
+      </label>
+      <label class="item item-select" id="solicitarNuevoEvento-select21">
+        <span class="input-label">Participación</span>
+        <select ng-options="participacion as participacion for participacion in participaciones" ng-model="postData.participacion"></select>
+      </label>
+      <label class="item item-select" id="solicitarNuevoEvento-select22">
+        <span class="input-label">Ingreso</span>
+        <select ng-options="ingreso as ingreso for ingreso in ingresos" ng-model="postData.ingreso"></select>
+      </label>
+      <div class="spacer" style="width: 300px; height: 29px;"></div>
+      <p>Rango Etareo</p>
+      <div class="row creacion_datos">
+        <form class="list">
+          <label class="item item-input">
+            <input type="number" placeholder="" ng-model="postData[&quot;rango_etareo/min&quot;]">
+          </label>
+        </form>
+        <p>a</p>
+        <form class="list">
+          <label class="item item-input">
+            <input type="number" placeholder="" ng-model="postData[&quot;rango_etareo/max&quot;]">
+          </label>
+        </form>
+      </div>
+      <button id="solicitarNuevoEvento-button118" class="button button-balanced button-block">Cómo obtener funciones premium</button>
+      <div class="spacer" style="width: 300px; height: 26.9896px;"></div>
+      <h4 id="solicitarNuevoEvento-heading52" style="color:#FFFFFF;">Asociar a comunidad</h4>
+      <div>
+        <p style="color: #fff;">Selecciona una ciudad para ver sus datos:</p>
+        <select ng-model="postData.comunidad_asociada">
+          <option value="">Ninguna</option>
+          <option ng-repeat="comunidad in aceptadas" value="{{comunidad.$id}}">{{comunidad.titulo}}</option>
+        </select>
+      </div>
+      <div class="spacer" style="width: 300px; height: 46px;"></div>
+      <div>
+        <h4 ng-if="transversal" style="color:#FFFFFF;">Ciudades</h4>
+
+        <ion-list ng-if="transversal">
+          <ion-checkbox ng-repeat="ciudad in ciudades" ng-model="ciudadesSeleccionadas[ciudad.$id]" class="checkbox-square">{{ciudad.$id}}</ion-checkbox>
+        </ion-list>
+
+        <button ng-show="transversal" ng-click="enviarTransversal()" class="button button-positive button-block">Enviar</button>
+
+        <div ng-show="!transversal" class="row">
+          <div class="col">
+            <button ng-click="guardar()" class="button button-positive button-block">Guardar</button>
+          </div>
+          <div class="col">
+            <button ng-click="enviar()" ng-show="tipo !== 'aceptadas'" class="button button-positive button-block">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,116 @@
+<ion-view title="Evento">
+  <ion-content padding="true" class="has-header">
+    <div class="list card" ng-show="ver_comentario">
+      <h5 style="color:#000000;">Comentario</h5>
+      <div class="show-list-numbers-and-dots">
+        <p style="color:#000000;">{{comunidad.comentario}}</p>
+      </div>
+    </div>
+    <div class="row comunidad-header">
+      <div class="col" ng-click="bigImage()" on-hold="bigImage()">
+        <img src="{{comunidad.logo || logos.Default}}" style="display: block; width: 70px; height: 70px; margin-left: auto; margin-right: auto; border-radius:5%;">
+      </div>
+      <div class="col col-75">
+        <h4>{{comunidad.titulo}}</h4>
+        <p>{{formatTipo(comunidad.tipo)}}</p>
+        <a href-inappbrowser="{{cleanUrl(comunidad.link_inscripcion)}}" class="button button-stable button-small button-block" ng-if="comunidad.link_inscripcion">Inscribirse</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-20 card comunidad-datos">
+        <p>Edición</p>
+        <h5>{{comunidad.edicion || "N.A."}}</h5>
+      </div>
+      <div class="col card comunidad-datos">
+        <p>Participación</p>
+        <h5>{{comunidad.participacion || "N.A."}}</h5>
+      </div>
+      <div class="col card comunidad-datos">
+        <p>Edad Promedio</p>
+        <h5>{{comunidad.edadPromedio || "N.A."}}</h5>
+      </div>
+      <div class="col card comunidad-datos">
+        <p>Ingreso</p>
+        <h5>{{comunidad.ingreso || "N.A."}}</h5>
+      </div>
+    </div>
+
+    <div>
+      <div class="comunidad-descripcion">
+        <!-- Info Horario y direccion -->
+        <div class="row">
+          <div class="col">
+            <h5> Fecha:</h5>
+            <p>{{ processFecha(comunidad) }}</p>
+          </div>
+          <div class="col">
+            <h5> Dirección:</h5>
+            <p>{{comunidad.direccion}}</p>
+          </div>
+        </div>
+        <!-- Info de descripción -->
+        <div>
+          <div class="row">
+            <div class="col">
+              <h5>Descripción:</h5>
+              <p>{{comunidad.descripcion}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h5>Requisitos:</h5>
+              <p>{{comunidad.requisitos}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="spacer" style="width: 300px; height: 19px;"></div>
+
+      <div class="comunidad-redes-sociales-container">
+        <div>
+          <h5 style="color:#FFFFFF;font-weight:600;">Plataformas Digitales</h5>
+
+          <div class="card comunidad-redes-sociales">
+            <ion-scroll direction="x">
+              <div class="row">
+                <img ng-src="{{logos.Whatsapp}}" href-inappbrowser="{{&quot;https://wa.me/&quot; + comunidad.whatsapp}}" ng-show="comunidad.whatsapp">
+
+                <img ng-src="{{logos.Instagram}}" href-inappbrowser="{{&quot;https://www.instagram.com/&quot; + comunidad.instagram}}" ng-show="comunidad.instagram">
+
+                <img ng-src="{{logos.Facebook}}" href-inappbrowser="{{&quot;https://facebook.com/&quot; + comunidad.facebook}}" ng-show="comunidad.facebook">
+
+                <img ng-src="{{logos.Youtube}}" href-inappbrowser="{{cleanUrl(comunidad.youtube)}}" ng-show="comunidad.youtube">
+
+                <img ng-src="{{logos.Web}}" href-inappbrowser="{{cleanUrl(comunidad.web)}}" ng-show="comunidad.web">
+
+                <img ng-src="{{logos.Twitter}}" href-inappbrowser="{{&quot;https://www.twitter.com/&quot; + comunidad.twitter}}" ng-show="comunidad.twitter">
+
+                <img ng-src="{{logos.Spotify}}" href-inappbrowser="{{cleanUrl(comunidad.spotify)}}" ng-show="comunidad.spotify">
+
+                <div ng-show="comunidad.whatsapp_group">
+                  <img ng-src="{{logos.Whatsapp}}">Grupo</div>
+
+                <img ng-src="{{logos.Correo}}" href-inappbrowser="mailto:{{comunidad.email}}" ng-if="comunidad.email">
+
+                <img ng-src="{{logos.Phone}}" href-inappbrowser="tel:{{comunidad.phone}}" ng-if="comunidad.phone">
+              </div>
+            </ion-scroll>
+          </div>
+        </div>
+        <div>
+          <h5 ng-show="comunidad_asociada" style="color:#FFFFFF;font-weight:600;">Comunidad Asociada</h5>
+
+          <ion-list ng-show="comunidad_asociada">
+            <ion-item class="item-thumbnail-left comunidad-en-menu" ui-sref="comunidad({&quot;comunidad&quot;:&quot;&quot;+comunidad_asociada.$id+&quot;&quot;, ver_comentario: false})">
+              <img src="{{comunidad_asociada.logo}}">
+              <h2>{{comunidad_asociada.titulo}}</h2>
+              <p>{{formatTipo(comunidad_asociada.tipo)}}</p>
+            </ion-item>
+          </ion-list>
+        </div>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>

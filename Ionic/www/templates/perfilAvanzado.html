@@ -1,0 +1,113 @@
+<ion-view title="Perfil avanzado" id="page19">
+  <ion-content padding="true" class="has-header">
+    <div id="perfilAvanzado-container12">
+      <a ng-click="saltar()" class="button button-stable button-block icon-right ion-android-arrow-forward">Llenar después</a>
+      <div>
+        <img src="{{ data.image }}" style="display: block; width: 30%; height: auto; margin-left: auto; margin-right: auto;">
+      </div>
+      <button id="perfilAvanzado-button99" ng-click="loadImage()" class="button button-stable button-block">Agregar Foto</button>
+    </div>
+    <form id="perfilAvanzado-form10" class="list">
+      <label class="item item-input item-stacked-label" id="perfilAvanzado-input9">
+        <span class="input-label">Correo electronico</span>
+        <input type="email" placeholder="ejemplo@ejemplo.com" ng-model="data.email">
+      </label>
+    </form>
+    <form id="perfilAvanzado-form23" class="list">
+      <label class="item item-select">
+        <span class="input-label">Ocupación</span>
+        <select ng-model="data.ocupacion">
+          <option value="Trabajo">Trabajo</option>
+          <option value="Educación Superior">Educación Superior</option>
+          <option value="Educación Secundaria">Educación Secundaria</option>
+          <option value="Otro">Otro</option>
+          <option value="Ninguna">Ninguna</option>
+        </select>
+      </label>
+    </form>
+    <div ng-show="data.ocupacion==&quot;Educación Superior&quot;">
+
+      <p style="color: white">Universidad</p>
+      <label class="item item-input">
+        <div class="input-label">
+        </div>
+        <select ng-model="data.universidad">
+          <option ng-repeat="universidad in universidades" value="{{universidad.$id}}">{{universidad.$id}}</option>
+        </select>
+      </label>
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label" ng-model="data.anio_de_ingreso">Año de ingreso</span>
+        <input type="text">
+      </label>
+
+      <p style="color: white">Área del Conocimiento</p>
+      <label class="item item-input">
+        <div class="input-label">
+        </div>
+        <select ng-model="data.area">
+          <option ng-repeat="area in areas" value="{{area.$id}}">{{area.$id}}</option>
+        </select>
+      </label>
+    </div>
+    <div>
+      <h4 style="color: white;"> Origen - Destino </h4>
+
+
+      <!--<div class="input-label">
+    Region de Origen
+</div>-->
+      <p style="color: white"> Región Origen</p>
+      <label class="item item-input ">
+        <div class="input-label">
+
+        </div>
+        <select ng-model="data.region_origen" ng-change="changeComunasOrigen()">
+          <option ng-repeat="region in regiones" value="{{region.$id}}">{{region.$id}}</option>
+        </select>
+      </label>
+
+      <p style="color: white"> Comuna de Origen</p>
+      <label class="item item-input">
+        <div class="input-label">
+        </div>
+        <select ng-model="data.comuna_origen">
+          <option ng-repeat="comuna in comunas_origen" value="{{comuna}}">{{comuna}}</option>
+        </select>
+      </label>
+
+      <p style="color: white">Region de Destino</p>
+      <label class="item item-input">
+        <div class="input-label">
+        </div>
+        <select ng-model="data.region_destino" ng-change="changeComunasDestino()">
+          <option ng-repeat="region in regiones" value="{{region.$id}}">{{region.$id}}</option>
+        </select>
+      </label>
+
+      <p style="color: white">Comuna de Destino</p>
+      <label class="item item-input">
+        <div class="input-label">
+        </div>
+        <select ng-model="data.comuna_destino">
+          <option ng-repeat="comuna in comunas_destino" value="{{comuna}}">{{comuna}}</option>
+        </select>
+      </label>
+    </div>
+    <form class="list">
+      <div class="spacer" style="width: 300px; height: 22px;"></div>
+      <h1 style="color:#FFFFFF;">Intereses</h1>
+      <div class="show-list-numbers-and-dots">
+        <p style="color:#FFFFFF;">Selecciona todos los que apliquen</p>
+      </div>
+
+      <div class="intereses-grid">
+        <ion-checkbox ng-repeat="interes in interesesDisponibles" ng-model="data.intereses[interes]" class="checkbox-square">{{interes}}</ion-checkbox>
+      </div>
+
+      <div class="spacer" style="width: 300px; height: 68px;"></div>
+
+      <a ng-click="guardarYContinuar()" class="button button-stable button-block icon-right ion-android-arrow-forward">Continuar</a>
+    </form>
+  </ion-content>
+</ion-view>

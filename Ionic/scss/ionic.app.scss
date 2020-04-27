@@ -1,0 +1,640 @@
+$assertive: #BE1622;
+$positive: #3772C5;
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+@import "../www/lib/ionic/scss";
+/* Manejo del fondo de la App
+NOTA: En el futuro hay que cambiar el link de la imagen a la base de datos 
+      oficial (actualmente tiene una BD dummy)
+*/
+ion-view {
+	background-image: url(https: //firebasestorage.googleapis.com/v0/b/iglesiabierta-mini-demo.appspot.com/o/wp-otrorojo.png?alt=media&token=802a9f4d-fb09-4f21-992c-2b7a1c332b69);
+	//background-image: url(https: //firebasestorage.googleapis.com/v0/b/iglesiabierta-mini-demo.appspot.com/o/Wallpaper-blanco.png?alt=media&token=8a0c930f-5dc0-4b1f-804a-d206bd005bae);
+	background-size: 100% auto;
+	//background-color: gray;
+}
+
+.scroll-refresher .ionic-refresher-content.ionic-refresher-with-text {
+	color: #fff;
+}
+
+.scroll-refresher .spinner {
+	stroke: #fff;
+}
+
+.popup {
+	background-color: white !important;
+}
+
+.tabs-striped.tabs-positive .tab-item.tab-item-active, .tabs-striped.tabs-positive .tab-item.active, .tabs-striped.tabs-positive .tab-item.activated {
+	margin-top: 0px !important;
+	border-style: none !important;
+	border-width: 0 0 0 0 !important;
+	border-color: transparent !important;
+	/* This is the color of my tab. You might want to change it to yours */}
+.bar-header, .tabs {
+	box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, .2);
+	border: 0px !important;
+	border-top: transparent;
+}
+
+ion-content.side-menu-left {
+	//background-color: #BE1E28;
+	background-color: #BE1622;
+	margin: 0;
+	.scroll {
+		height: -webkit-fill-available;
+	}
+	
+}
+.side-menu-item {
+	border-width: 0;
+}
+
+.menu-bottom {
+	position: absolute;
+	bottom: 0;
+	width: -webkit-fill-available;
+}
+
+.menu-bottom-admin-4 {
+	width: -webkit-fill-available;
+}
+
+.button-header,
+.button-header .icon: before,
+.button-header .icon: after {
+	margin-top: 0px !important;
+	color: #fff;
+	font-size: 10px !important;
+}
+
+/* Manejo de inicio de sesion
+
+    - Hacer letras blancas
+    - Hacer que la fecha no tenga padding
+*/
+
+
+
+/* Manejo de los botones e items
+
+Importantes: - Fondos transparentes por default
+        - Se pueden crear clases especificas para cambiar esto
+    - Letras blancas o claras segun corresponda
+        - Tambien se pueden cambiar mas adelante´
+*/
+.item-complex .item-content, .item {
+	border-color: stable;
+	color: #fff;
+	background-color: transparent !important;
+	h2light, h2 {
+		color: #fff !important;
+		font-weight: bold}
+	p {
+		color: #fff !important;
+		font-weight: 400}
+	span {
+		color: #fff !important;
+	}
+	
+	.input-label {
+		color: #fff !important;
+	}
+	
+}
+// Menu de Inicio
+.noticia-inicio {
+	ion-item {
+		background-color: #fff !important;
+	}
+	
+	div {
+		position: absolute;
+		float: right;
+		right: 0;
+		top: 0;
+		font-size: xx-small;
+		line-height: normal;
+		padding: 2px;
+	}
+	
+	div.Especial {
+		background-color: darkblue !important;
+	}
+	
+	div.Anuncio {
+		background-color: #ffc900 !important;
+	}
+	
+	h2 {
+		color: black !important;
+		white-space: normal;
+		padding-top: 5px;
+	}
+	
+	p {
+		color: gray !important;
+		position: absolute !important;
+		bottom: 10px !important;
+		font-weight: 400;
+	}
+	
+	img {
+		top: 0 !important;
+		left: 0 !important;
+		width: auto !important;
+		max-width: 30% !important;
+		max-height: 100% !important;
+		height: 100% !important;
+	}
+	
+	margin-bottom: 20px;
+	border-radius: 10px;
+}
+
+.action-sheet {
+	.button {
+		padding-left: 20px;
+	}
+	
+	color: black !important;
+}
+
+/* Manejo de las pestañas
+
+Importantes: - Fondos transparentes
+    - Letras blancas o claras segun corresponda
+    - Fondos blancos o claros segun corresponda
+    - (TODO) Personalizar icons
+*/
+ion-tab, .tabs {
+	background-color: #BE1E28 !important;
+	color: #fff !important;
+}
+
+.tabs .tab-item {
+	font-size: 9px !important;
+}
+
+/* Manejo de ingreso de codigo
+Objetivos: - Separar celdas
+    - Redondear celdas
+*/
+.code_input {
+	border-radius: 5%;
+	margin: 5px;
+	padding-right: 0px !important;
+	input {
+		text-align: center;
+		color: #fff;
+		font-weight: bold;
+	}
+	
+}
+.phone_input {
+	input {
+		color: #fff;
+		font-weight: bold;
+	}
+	
+}
+/* Manejo de comunidades en menu
+*/
+
+.top-icon {
+	font-size: 2em;
+}
+
+.comunidad-en-menu {
+	background-color: #fff !important;
+	.item-content {
+		padding-top: 5px;
+	}
+	
+	h2.ng-binding {
+		color: black !important;
+		white-space: normal;
+		margin-bottom: 15px;
+		left: 33%;
+		position: absolute;
+	}
+	
+	p.ng-binding {
+		color: gray !important;
+		position: absolute !important;
+		bottom: 10px !important;
+		left: 33%;
+	}
+	
+	i.icon {
+		color: gray !important;
+	}
+	
+	img {
+		top: 0 !important;
+		left: 0 !important;
+		width: auto !important;
+		max-width: 30% !important;
+		max-height: 100% !important;
+		height: 100% !important;
+	}
+	
+	margin-bottom: 20px;
+	border-width: 0px;
+	border-radius: 10px;
+}
+
+.popover-filter {
+	color: black !important;
+	h1, h2, h3, h4, h5, p, span, i {
+		color: black !important;
+	}
+	
+	h5 {
+		padding-left: 5px;
+	}
+	
+}
+/* Manejo de comunidad
+    - Tenemos cuatro contenedores
+        - Header (Imagen, titulo, subtitulo)
+        - Sub-header (antiguedad, participacion, edad media, calendario)
+        - Datos (horario, direccion)
+        - Descripción
+*/
+.comunidad-header {
+	p {
+		font-size: small;
+		font-weight: 400;
+	}
+	
+	margin-bottom: 15px;
+	h3, h4, h5 {
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+		color: #FCFEFF !important;
+	}
+	
+	.col.col-75 {
+		margin-left: 10px;
+	}
+	
+	.row, p, .col {
+		padding-top: 0;
+		padding-bottom: 0;
+		padding-left: 0;
+		padding-right: 5px;
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+		div {
+			line-height: normal;
+		}
+		
+	}
+	button {
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+		line-height: normal;
+		padding: 5px;
+	}
+	
+	ion-icon {
+		font-size: 2em;
+	}
+	
+}
+.comunidad-ser-parte {
+	min-height: auto;
+	font-size: x-small;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.comunidad-subheader {
+	text-align: center;
+	h3, h4, h5 {
+		color: #FCFEFF !important;
+	}
+	
+	p {
+		font-size: small;
+	}
+	
+}
+.comunidad-datos {
+	background-color: #BE1E28 !important;
+	color: #FCFEFF !important;
+	text-align: center;
+	padding: 0;
+	p {
+		padding: 0;
+		font-size: xx-small;
+	}
+	
+	h5 {
+		color: white !important;
+	}
+	
+	margin-left: 3px !important;
+}
+
+.comunidad-descripcion {
+	h3, h4, p, h5 {
+		color: #FCFEFF !important;
+	}
+	
+	h5 {
+		font-weight: bold;
+	}
+	
+	p {
+		font-size: small;
+	}
+	
+}
+.comunidad-redes-sociales-container {
+	padding-left: 10px;
+}
+
+.big-image {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: -webkit-fill-available;
+	img {
+		width: -webkit-fill-available;
+	}
+	
+}
+.comunidad-redes-sociales {
+	width: fit-content;
+	background-color: white !important;
+	border-radius: 10px;
+	h5 {
+		font-weight: bold;
+	}
+	
+	img {
+		height: 35px;
+		width: auto;
+		margin: 10px;
+	}
+	
+}
+.comunidad-imagen {
+	border-radius: 10px;
+	.swiper-container {
+		border-radius: 10px;
+	}
+	
+}
+/* Manejo de cards
+
+Importante: - Transparente por default
+*/
+
+/* Manejo de preferencias
+
+Importante: - Cuando se selecciona debe cambiar de color
+*/
+
+.intereses-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	label {
+		margin-top: 7px;
+		margin-bottom: 7px;
+		margin-left: 0;
+		margin-right: 0;
+		border-width: 0;
+		font-size: 14px;
+	}
+	
+	.item {
+		padding-right: 0 !important;
+		padding-left: 40px !important;
+	}
+	
+	.checkbox {
+		left: 0;
+	}
+	
+}
+.interest-selected {
+	color: #fff !important;
+	border-color: #fff !important;
+	.activated {
+		background-color: #fff !important;
+	}
+	
+}
+.interest-not-selected {
+	color: #bababa !important;
+	border-color: #bababa !important;
+	.activated {
+		background-color: #bababa !important;
+	}
+	
+}
+/*
+Ciudad de acogida
+*/
+
+.ciudad-de-acogida-banner {
+	box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, .2);
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	h1, h2, h3, h4, h5, p {
+		color: #fff;
+		text-align: center;
+		margin: 0px;
+		width: 100%;
+	}
+	
+}
+.ciudad-de-acogida-title {
+	position: absolute;
+	width: 100%;
+	transform: translate(0, -100%);
+}
+
+.ciudad-de-acogida-body {
+	padding: 10px;
+	margin: 0;
+	width: 100%;
+}
+
+.ciudad-de-acogida-card {
+	background-color: #BE1622;
+	color: #fff;
+	p {
+		margin: 5px;
+	}
+	
+}
+/*
+Contacto
+*/
+
+.contacto-banner {
+	box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, .2);
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	h1, h2, h3, h4, h5, p {
+		color: #fff;
+		text-align: center;
+		margin: 0px;
+		width: 100%;
+	}
+	
+}
+.contacto-title {
+	position: absolute;
+	width: 100%;
+	transform: translate(0, -100%);
+}
+
+.contacto-body {
+	padding: 10px;
+	margin: 0;
+	width: 100%;
+}
+
+.contacto-card {
+	background-color: #BE1622;
+	color: #fff;
+	p {
+		margin: 5px;
+	}
+	
+}
+.contacto-botones {
+	margin: 10px;
+}
+
+/* Recomendar comunidad o instancia
+*/
+.recomendacion-nombre {
+	border-radius: 5px;
+	color: #000;
+	border-width: 0;
+	input {
+		background-color: white;
+		color: black;
+		box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+		border-radius: 5px;
+	}
+	
+}
+.recomendacion-body {
+	color: #000;
+	background-color: #fff;
+	border-width: 0;
+	textarea {
+		box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+		border-radius: 5px;
+	}
+	
+}
+/* Mi perfil
+*/
+
+.mi-perfil-dato {
+	border-width: 0;
+}
+
+/* Administrar Ciudad */
+.solicitudes-badge {
+	float: right;
+}
+
+/* Editar Administradores*/
+.administrador-item {
+	background-color: #fff !important;
+	border-radius: 10px;
+	h2 {
+		color: black !important;
+		white-space: normal;
+		padding-top: 5px;
+	}
+	
+	p {
+		color: gray !important;
+		position: absolute !important;
+		bottom: 10px !important;
+		font-weight: 400;
+	}
+	
+	img {
+		top: 0 !important;
+		left: 0 !important;
+		width: auto !important;
+		max-width: 30% !important;
+		max-height: 100% !important;
+		height: 100% !important;
+	}
+	
+}
+/*Crear comunidad*/
+.plataformas-de-contacto {
+	ion-icon {
+		margin-right: 10px;
+		font-size: 2em;
+	}
+	
+}
+.creacion_datos {
+	border-width: 0;
+	.item {
+		border-width: 0;
+		input {
+			border-width: 0 0 1px 0;
+			border-style: solid;
+			border-color: white;
+		}
+		
+	}
+}
+.formato-horario, .formato-rango-etareo {
+	color: #fff !important;
+	text-align: center;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.input-nueva-comunidad {
+	color: #fff !important;
+}
+
+/*Crear ciudad*/
+.admin-nueva-ciudad {
+	span, .radio-content, i {
+		color: black !important;
+	}
+	
+}
+/*Backdrop del Modal*/
+.modal-backdrop-bg {
+	transition: opacity 300ms ease-in-out;
+	-webkit-transition: opacity 300ms ease-in-out;
+	background-color: #000;
+	opacity: 0;
+}
+
+.active .modal-backdrop-bg {
+	opacity: 0.5;
+}
+
+ion-view,.pane,.view {
+	background-color: #BE1622;
+}
+
+body {
+	color: #FCFEFF;
+}
+

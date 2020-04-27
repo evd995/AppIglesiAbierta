@@ -1,0 +1,38 @@
+<ion-view title="Aportar / Contactar" id="page27">
+  <ion-content padding="false" class="has-header">
+    <div class="ciudad-de-acogida-banner">
+      <img src="{{pais.logo  || logos.Default}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+      <div class="ciudad-de-acogida-title">
+        <h3>IglesiAbierta</h3>
+        <p>Chile</p>
+      </div>
+    </div>
+    <div id="aportarContactar-container13" class="contacto-body">
+      <div id="aportarContactar-markdown24" style="text-align:justify;" class="show-list-numbers-and-dots">
+        <p style="color:#FFFFFF;">Para el funcionamiento de esta campaña de encuentro y acogida es fundamental el aporte de cada joven. Si tienes una iniciativa interesante de mostrar para ayudar a los jóvenes puedes solicitarla aquí abajo.</p>
+      </div>
+      <h4 id="aportarContactar-heading15" style="color:#FFFFFF;">¡Aporta!</h4>
+      <div id="aportarContactar-markdown25" style="text-align:justify;" class="show-list-numbers-and-dots">
+        <p style="color:#FFFFFF;">Si deseas crear o publicar una comunidad o instancia juvenil puedes hacerlo haciendo click en el siguiente botón. Esta será enviada a un administrador para que sea publicada en un máximo de 48 hrs.</p>
+      </div>
+      <a ui-sref="crearComunidadOInstancia()" id="aportarContactar-button16" class="button button-stable button-block">Crear comunidad o instancia</a>
+      <div id="aportarContactar-markdown26" ng-show="false" style="text-align:justify;" class="show-list-numbers-and-dots">
+        <p style="color:#FFFFFF;">¿Has visto una comunidad o instancia eclesial o ciudadana que pueda ser de utilidad para los jóvenes? Si es así puedes recomendarla para que alguien de la coordinación diocesana la agregue y así esté visible para todos.</p>
+      </div>
+      <a ui-sref="recomendar()" id="aportarContactar-button15" ng-show="false" class="button button-stable button-block">Recomendar comunidad o instancia</a>
+      <div id="aportarContactar-markdown39" ng-show="false" style="text-align:justify;" class="show-list-numbers-and-dots">
+        <p style="color:#FFFFFF;">¿Tienes un instancia especial que desearías que tenga un mayor alcance? Puedes solicitar esto aquí.</p>
+      </div>
+      <a ui-sref="solicitarPublicidadOAnuncio()" id="aportarContactar-button17" ng-show="false" class="button button-stable button-block">Solicitar publicidad o anuncio</a>
+      <div class="spacer" style="width: 300px; height: 40px;"></div>
+      <h4 id="aportarContactar-heading20" style="color:#FFFFFF;">¡Contáctate!</h4>
+      <div class="list card administrador-item" ui-sref="perfil({userID:coordinadorCiudad.$id})">
+        <ion-item class="item-thumbnail-left">
+          <img src="{{coordinadorCiudad.image || logos.DefaultUser}}">
+          <h2>{{coordinadorCiudad.nombre + " " + coordinadorCiudad.apellido}}</h2>
+          <p>Coordinador</p>
+        </ion-item>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

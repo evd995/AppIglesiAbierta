@@ -1,0 +1,159 @@
+<ion-view title="Mi Perfil" cache-view="false" id="page21">
+  <ion-content padding="true" class="has-header">
+    <div>
+      <img src="{{ data.image }}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+    <p style="color:#FFFFFF;">
+      <strong>Nota</strong>: El ideal es que sea suba una foto cuadrada y de buena calidad
+
+    </p>
+    <button id="miPerfil-button104" ng-click="getImage()" class="button button-stable button-block">Cambiar Foto</button>
+    <button id="miPerfil-button12" ng-click="logOut()" class="button button-stable button-block">Cerrar Sesión</button>
+    <div class="spacer" style="width: 300px; height: 31px;"></div>
+    <h4 id="miPerfil-heading25" style="color:#FFFFFF;">Datos</h4>
+    <div>
+      <form class="list">
+        <ion-list>
+          <label class="item item-input">
+            <span class="input-label">Nombre</span>
+            <input type="text" placeholder="" ng-model="user.nombre" style="color:#FFF; ">
+          </label>
+
+          <label class="item item-input">
+            <span class="input-label">Apellido</span>
+            <input type="text" placeholder="" style="color:#FFF; " ng-model="user.apellido">
+          </label>
+
+          <label class="item item-input">
+            <span class="input-label">Sexo</span>
+            <select ng-model="user.sexo">
+              <option value="m">M</option>
+              <option value="f">F</option>
+              <option value="otro">Prefiero no decir</option>
+            </select>
+          </label>
+
+          <label class="item item-input">
+            <span class="input-label">Fecha de nacimiento</span>
+            <input type="date" placeholder="" style="color:#FFF; padding-right:0px;" ng-model="data.fecha_de_nacimiento">
+          </label>
+
+          <label class="item item-input">
+            <span class="input-label">Correo electronico</span>
+            <input type="email" style="color:#FFF; padding-right:0px;" placeholder="ejemplo@ejemplo.com" ng-model="user.email">
+          </label>
+
+
+          <div class="spacer" style="width: 300px; height: 40px;"></div>
+          <h4 style="color: white;"> Origen - Destino </h4>
+
+
+          <!--<div class="input-label">
+            Region de Origen
+        </div>-->
+          <p style="color: white"> Región Origen</p>
+          <label class="item item-input ">
+            <div class="input-label">
+
+            </div>
+            <select ng-model="user.region_origen" ng-change="changeComunasOrigen()">
+              <option ng-repeat="region in regiones" value="{{region.$id}}">{{region.$id}}</option>
+            </select>
+          </label>
+
+          <p style="color: white"> Comuna de Origen</p>
+          <label class="item item-input">
+            <div class="input-label">
+            </div>
+            <select ng-model="user.comuna_origen">
+              <option ng-repeat="comuna in comunas_origen" value="{{comuna}}">{{comuna}}</option>
+            </select>
+          </label>
+
+          <p style="color: white">Region de Destino</p>
+          <label class="item item-input">
+            <div class="input-label">
+            </div>
+            <select ng-model="user.region_destino" ng-change="changeComunasDestino()">
+              <option ng-repeat="region in regiones" value="{{region.$id}}">{{region.$id}}</option>
+            </select>
+          </label>
+
+          <p style="color: white">Comuna de Destino</p>
+          <label class="item item-input">
+            <div class="input-label">
+            </div>
+            <select ng-model="user.comuna_destino">
+              <option ng-repeat="comuna in comunas_destino" value="{{comuna}}">{{comuna}}</option>
+            </select>
+          </label>
+
+
+
+          <h4> </h4>
+
+
+
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Ciudad de Acogida
+            </div>
+            <br>
+            <select ng-model="user.ciudad">
+              <option ng-repeat="city in cities" ng-show="!city.estaOculta" value="{{city.$id}}">{{city.$id}}</option>
+            </select>
+          </label>
+        </ion-list>
+        <div class="spacer" style="width: 300px; height: 83px;"></div>
+
+        <label class="item item-select">
+          <span class="input-label">Ocupación</span>
+          <select ng-model="user.ocupacion">
+            <option value="Trabajo">Trabajo</option>
+            <option value="Educación Superior">Educación Superior</option>
+            <option value="Educación Secundaria">Educación Secundaria</option>
+            <option value="Otro">Otro</option>
+            <option value="Ninguna">Ninguna</option>
+          </select>
+        </label>
+      </form>
+      <div ng-show="user.ocupacion==&quot;Educación Superior&quot;">
+
+        <p style="color: white">Universidad</p>
+        <label class="item item-input">
+          <div class="input-label">
+          </div>
+          <select ng-model="user.universidad">
+            <option ng-repeat="universidad in universidades" value="{{universidad.$id}}">{{universidad.$id}}</option>
+          </select>
+        </label>
+
+        <label class="item item-input item-stacked-label">
+          <span class="input-label" ng-model="user.anio_de_ingreso">Año de ingreso</span>
+          <input type="text">
+        </label>
+
+        <p style="color: white">Área del Conocimiento</p>
+        <label class="item item-input">
+          <div class="input-label">
+          </div>
+          <select ng-model="user.area">
+            <option ng-repeat="area in areas" value="{{area.$id}}">{{area.$id}}</option>
+          </select>
+        </label>
+      </div>
+      <form class="list">
+        <div class="spacer" style="width: 300px; height: 22px;"></div>
+        <h1 style="color:#FFFFFF;">Intereses</h1>
+        <div class="show-list-numbers-and-dots">
+          <p style="color:#FFFFFF;">Selecciona todos los que apliquen</p>
+        </div>
+
+        <div class="intereses-grid">
+          <ion-checkbox ng-repeat="interes in interesesDisponibles" ng-model="data.intereses[interes]" class="checkbox-square">{{interes}}</ion-checkbox>
+        </div>
+      </form>
+    </div>
+    <button id="miPerfil-button102" ng-click="guardar()" class="button button-positive button-block">Guardar</button>
+  </ion-content>
+</ion-view>

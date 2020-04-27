@@ -1,0 +1,3 @@
+platform :ios, '7.0'
+target 'IglesiAbierta' do
+end

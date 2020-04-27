@@ -1,0 +1,54 @@
+<ion-view title="Información Básica" id="page18">
+  <ion-content padding="true" class="has-header">
+    <form class="list">
+      <div class="spacer" style="width: 300px; height: 40px;"></div>
+      <div class="show-list-numbers-and-dots">
+        <p style="color:#FFFFFF;">
+          <strong>Todos los campos son obligatorios</strong>
+        </p>
+      </div>
+      <div class="spacer" style="width: 300px; height: 18px;"></div>
+      <ion-list>
+        <label class="item item-input">
+          <span class="input-label">Nombre</span>
+          <input type="text" placeholder="" ng-model="data.nombre" style="color:#FFF; ">
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">Apellido</span>
+          <input type="text" placeholder="" style="color:#FFF; " ng-model="data.apellido">
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">Sexo</span>
+          <select ng-model="data.sexo">
+            <option value="m">M</option>
+            <option value="f">F</option>
+            <option value="otro">Prefiero no decir</option>
+          </select>
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">Fecha de nacimiento</span>
+          <input type="date" placeholder="" style="color:#FFF; padding-right:0px;" ng-model="fecha_de_nacimiento">
+        </label>
+
+
+        <div class="spacer" style="width: 300px; height: 40px;"></div>
+
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Ciudad de Acogida
+          </div>
+          <br>
+          <select ng-model="data.ciudad">
+            <option ng-repeat="city in cities" ng-show="!city.estaOculta" value="{{city.$id}}">{{city.$id}}</option>
+          </select>
+        </label>
+      </ion-list>
+      <div class="spacer" style="width: 300px; height: 83px;"></div>
+      <a ng-click="continuar()" class="button button-stable button-block icon-right ion-android-arrow-forward">Continuar</a>
+    </form>
+  </ion-content>
+</ion-view>

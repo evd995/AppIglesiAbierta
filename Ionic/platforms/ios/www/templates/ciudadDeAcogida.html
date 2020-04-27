@@ -1,0 +1,84 @@
+<ion-view title="Ciudad de Acogida" id="page24">
+  <ion-content padding="false" class="has-header">
+    <div id="ciudadDeAcogida-container10">
+      <div class="ciudad-de-acogida-banner">
+        <img src="{{ciudad.image || logos.Default}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+        <div class="ciudad-de-acogida-title">
+          <h3>{{ciudad.$id}}</h3>
+          <p>{{ciudad.metadata.region}}</p>
+        </div>
+      </div>
+    </div>
+    <div id="ciudadDeAcogida-container11" class="ciudad-de-acogida-body">
+      <h4 id="ciudadDeAcogida-heading11" style="color:#FFFFFF;">Descripción</h4>
+      <div id="ciudadDeAcogida-markdown11" class="show-list-numbers-and-dots">
+        <p style="color:#FFFFFF;">{{ciudad.descripcion}}</p>
+      </div>
+      <div class="list card ciudad-de-acogida-card" id="ciudadDeAcogida-card22" ng-show="ciudad.habitantes">
+        <div id="ciudadDeAcogida-markdown15" style="text-align:center;" class="show-list-numbers-and-dots">
+          <p style="color:#FFFFFF;">Habitantes:
+            <strong>{{ciudad.habitantes}}</strong>
+          </p>
+        </div>
+      </div>
+      <div class="list card ciudad-de-acogida-card" ng-show="ciudad.institutos_educacion_superior">
+        <div style="text-align:center;" class="show-list-numbers-and-dots">
+          <p style="color:#FFFFFF;">Institutos de educacion superior:
+            <strong>{{ciudad.institutos_educacion_superior}}</strong>
+          </p>
+        </div>
+      </div>
+      <div class="list card ciudad-de-acogida-card" ng-show="ciudad.estudiantes_educacion_superior">
+        <div style="text-align:center;" class="show-list-numbers-and-dots">
+          <p style="color:#FFFFFF;">Jovenes en educación superior:
+            <strong>{{ciudad.estudiantes_educacion_superior}}</strong>
+          </p>
+        </div>
+      </div>
+      <h4 id="ciudadDeAcogida-heading12" style="color:#FFFFFF;">Datos Eclesiales</h4>
+      <div class="list card ciudad-de-acogida-card" id="ciudadDeAcogida-card26">
+        <div id="ciudadDeAcogida-markdown19" style="text-align:center;" class="show-list-numbers-and-dots">
+          <p style="color:#FFFFFF;">Comunidades Juveniles:
+            <strong>{{getLength('comunidades')}}</strong>
+          </p>
+        </div>
+      </div>
+      <div class="list card ciudad-de-acogida-card" id="ciudadDeAcogida-card27">
+        <div id="ciudadDeAcogida-markdown20" style="text-align:center;" class="show-list-numbers-and-dots">
+          <p style="color:#FFFFFF;">Voluntariados:
+            <strong>{{getLength('voluntariados')}}</strong>
+          </p>
+        </div>
+      </div>
+      <div class="list card ciudad-de-acogida-card" id="ciudadDeAcogida-card28">
+        <div id="ciudadDeAcogida-markdown21" style="text-align:center;" class="show-list-numbers-and-dots">
+          <p style="color:#FFFFFF;">Eventos y formaciones:
+            <strong>{{getLength('eventos')}}</strong>
+          </p>
+        </div>
+      </div>
+      <div class="list card ciudad-de-acogida-card" id="ciudadDeAcogida-card29">
+        <div id="ciudadDeAcogida-markdown22" style="text-align:center;" class="show-list-numbers-and-dots">
+          <p style="color:#FFFFFF;">Vida Cotidiana:
+            <strong>{{getLength('vida_cotidiana')}}</strong>
+          </p>
+        </div>
+      </div>
+      <div>
+        <h4 style="color:#FFFFFF;">
+          Datos de Contacto
+        </h4>
+
+        <div class="list card administrador-item" ui-sref="perfil({userID:coordinadorCiudad.$id})">
+          <ion-item class="item-thumbnail-left">
+            <img src="{{coordinadorCiudad.image || logos.DefaultUser}}">
+            <h2>{{coordinadorCiudad.nombre + " " + coordinadorCiudad.apellido}}</h2>
+            <p>Coordinador</p>
+          </ion-item>
+        </div>
+
+
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

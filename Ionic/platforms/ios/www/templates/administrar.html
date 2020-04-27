@@ -1,0 +1,60 @@
+<ion-view title="Administrar" id="page31">
+  <ion-content padding="true" class="has-header">
+    <form id="administrar-form20" class="list">
+      <label class="item item-select" id="administrar-select3">
+        <span class="input-label">Categoría</span>
+        <select ng-options="cat.id as cat.displayName for cat in categorias" ng-model="data.selected" ng-change="cargarDatos(data.selected)"></select>
+      </label>
+    </form>
+    <div id="administrar-markdown42" class="show-list-numbers-and-dots">
+      <p style="color:#FFFFFF;">Estas son todas las comunidades e instrancias que tú administras. Para seleccionarla debes mantenerla presionada.</p>
+    </div>
+    <ion-list>
+      <ion-item class="item-thumbnail-left comunidad-en-menu" ui-sref="{{redireccionar.single[data.selected]}}({comunidad: comunidad.$id, ver_comentario: true})" ng-repeat="comunidad in aceptadas" on-hold="abrirOpciones(&quot;aceptadas&quot;, comunidad.$id)">
+        <img src="{{comunidad.logo || logos.Default}}">
+        <h2>{{comunidad.titulo}}</h2>
+        <p>{{formatTipo(comunidad.tipo)}}</p>
+      </ion-item>
+    </ion-list>
+    <div ng-show="suspendidas.length">
+      <h4 style="color:#FFFFFF;">Suspendidas</h4>
+      <ion-list>
+        <ion-item class="item-thumbnail-left comunidad-en-menu" ui-sref="{{redireccionar.single[data.selected]}}({comunidad:comunidad.$id, ver_comentario: true})" ng-repeat="comunidad in suspendidas" on-hold="abrirOpciones(&quot;suspendidas&quot;, comunidad.$id)">
+          <img src="{{comunidad.logo || logos.Default}}">
+          <h2>{{comunidad.titulo}}</h2>
+          <p>{{formatTipo(comunidad.tipo)}}</p>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div ng-show="rechazadas.length">
+      <h4 style="color:#FFFFFF;">Rechazadas</h4>
+      <ion-list>
+        <ion-item class="item-thumbnail-left comunidad-en-menu" ui-sref="{{redireccionar.single[data.selected]}}({comunidad:comunidad.$id, ver_comentario: true})" ng-repeat="comunidad in rechazadas" on-hold="abrirOpciones(&quot;rechazadas&quot;, comunidad.$id)">
+          <img src="{{comunidad.logo || logos.Default}}">
+          <h2>{{comunidad.titulo}}</h2>
+          <p>{{formatTipo(comunidad.tipo)}}</p>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div ng-show="pendientes.length">
+      <h4 style="color:#FFFFFF;">Pendientes</h4>
+      <ion-list>
+        <ion-item class="item-thumbnail-left comunidad-en-menu" ui-sref="{{redireccionar.single[data.selected]}}({comunidad:comunidad.$id, ver_comentario: false})" on-hold="abrirOpciones(&quot;pendientes&quot;, comunidad.$id)" ng-repeat="comunidad in pendientes">
+          <img src="{{comunidad.logo || logos.Default}}">
+          <h2>{{comunidad.titulo}}</h2>
+          <p>{{formatTipo(comunidad.tipo)}}</p>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div ng-show="guardadas.length">
+      <h4 style="color:#FFFFFF;">Guardadas</h4>
+      <ion-list>
+        <ion-item class="item-thumbnail-left comunidad-en-menu" ui-sref="{{redireccionar.solicitud[data.selected]}}({comunidadID:comunidad.$id, tipo: 'guardadas'})" on-hold="abrirOpciones(&quot;guardadas&quot;, comunidad.$id)" ng-repeat="comunidad in guardadas">
+          <img src="{{comunidad.logo || logos.Default}}">
+          <h2>{{comunidad.titulo}}</h2>
+          <p>{{formatTipo(comunidad.tipo)}}</p>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-view>

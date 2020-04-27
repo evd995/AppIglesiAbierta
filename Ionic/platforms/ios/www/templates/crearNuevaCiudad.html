@@ -1,0 +1,25 @@
+<ion-view title="Crear nueva ciudad" id="page39">
+  <ion-content padding="true" class="has-header">
+    <form id="crearNuevaCiudad-form17" class="list">
+      <label class="item item-input item-stacked-label" id="crearNuevaCiudad-input39">
+        <span class="input-label">Ciudad</span>
+        <input type="text" placeholder="" ng-model="data.ciudad">
+      </label>
+      <label class="item item-input item-stacked-label" id="crearNuevaCiudad-input40">
+        <span class="input-label">Región</span>
+        <input type="text" placeholder="" ng-model="data.region">
+      </label>
+      <h4 id="crearNuevaCiudad-heading42" style="color:#FFFFFF;">Administrador</h4>
+      <label class="item item-input" id="crearNuevaCiudad-search2">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="" ng-model="queryData.nombre">
+      </label>
+      <label class="item item-input">
+        <i class="icon ion-ios-telephone placeholder-icon"></i>
+        <input type="search" placeholder="Número de teléfono" ng-model="queryData.phoneNumber">
+      </label>
+      <ion-radio ng-repeat="usuario in usuarios | filter: {$: queryData.nombre, phoneNumber: queryData.phoneNumber}" ng-model="data.administrador" ng-value="usuario.$id" class="admin-nueva-ciudad">{{usuario.nombre + usuario.apellido}}</ion-radio>
+      <button id="crearNuevaCiudad-button98" ng-click="agregar()" class="button button-stable button-block">Guardar</button>
+    </form>
+  </ion-content>
+</ion-view>

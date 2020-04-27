@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "551038066673",
+    "firebase_url": "https://iglesiabierta-mini-demo.firebaseio.com",
+    "project_id": "iglesiabierta-mini-demo",
+    "storage_bucket": "iglesiabierta-mini-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551038066673:android:867d6bce4da786a5",
+        "android_client_info": {
+          "package_name": "com.iglesiabierta.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "551038066673-7adenq2816hcsiid9bn87138nqvvsitf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iglesiabierta.app",
+            "certificate_hash": "92441c7ebe86988b0b22751eccd35a0dda874ec2"
+          }
+        },
+        {
+          "client_id": "551038066673-pvk9crdfm3aeck8po3ouekn36mus74c7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgj7LWrS5PNsUE89xYbdKneaAF4MdPGbU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "551038066673-pvk9crdfm3aeck8po3ouekn36mus74c7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

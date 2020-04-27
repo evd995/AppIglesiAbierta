@@ -1,0 +1,82 @@
+<ion-view title="Crear anuncio" cache-view="false" id="page40">
+  <ion-content padding="true" class="has-header">
+    <div>
+      <div>
+        <img src="{{&nbsp;data.image }}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+      </div>
+      <button ng-click="loadImage()" class="button button-stable button-block">Agregar foto</button>
+    </div>
+    <form id="crearAnuncio-form21" class="list">
+      <div class="list card" ng-show="noticia_id&amp;&amp;comentario">
+        <h5 style="color:#000000;">Comentario</h5>
+        <div class="show-list-numbers-and-dots">
+          <p style="color:#000000;">{{comentario}}</p>
+        </div>
+      </div>
+      <label class="item item-input item-stacked-label creacion_datos" id="crearAnuncio-input30">
+        <span class="input-label">Título</span>
+        <input type="text" placeholder="" ng-model="postData.titulo">
+      </label>
+      <label class="item item-input item-stacked-label creacion_datos">
+        <span class="input-label">Subtitulo* (Máx. 40 caracteres)</span>
+        <textarea maxlength="40" placeholder="" rows="2" ng-model="postData.subtitulo"></textarea>
+      </label>
+    </form>
+    <form id="crearAnuncio-form22" class="list">
+      <div ng-show="tipo_anuncio !== &quot;Anuncio&quot;">
+        Seleccionar comunidad o instancia que se desea propocionar.
+        <label class="item item-select">
+          <span class="input-label">Tipo</span>
+          <select ng-model="postData.tipo" ng-change="cargarDatos(postData.tipo)">
+            <option value="Comunidad">Comunidad Juvenil</option>
+            <option value="Evento">Evento o Formacion</option>
+            <option value="Voluntariado">Apostolado o Voluntariado</option>
+            <option value="VidaCotidiana">Vida Cotidiana</option>
+          </select>
+        </label>
+
+        Puedes mantener apretada para ver el perfil de la comunidad o instancia.
+        <ion-list>
+          <ion-radio ng-repeat="comunidad in aceptadas" ng-model="postData.enlace" ng-value="comunidad.$id" on-hold="verComunidad(comunidad.$id)" ng-change="changeInstancia(comunidad)">
+            {{comunidad.titulo}}
+          </ion-radio>
+        </ion-list>
+      </div>
+    </form>
+    <form id="crearAnuncio-form14" class="list" ng-show="tipo_anuncio == 'Anuncio'">
+      <div ng-show="tipo_anuncio === &quot;Anuncio&quot;">
+        <button class="button button-stable button-block">Agregar Foto</button>
+        <label class="item item-input">
+          <span class="input-label">Link</span>
+          <input type="text" placeholder="www.ejemplo.com" ng-model="postData.enlace">
+        </label>
+      </div>
+    </form>
+    <h4 id="crearAnuncio-heading14" style="color:#FFFFFF;">Selecciona tu público (opcional)</h4>
+    <form id="crearAnuncio-form11" class="list">
+      <label class="item item-select">
+        <span class="input-label">Sexo</span>
+        <select ng-model="postData.sexo">
+          <option value="">No es relevante</option>
+          <option value="m">Masculino</option>
+          <option value="f">Femenino</option>
+        </select>
+      </label>
+      <label class="item item-input" id="crearAnuncio-input17">
+        <span class="input-label">Edad mínima</span>
+        <input type="number" placeholder="" ng-model="postData.edadMinima">
+      </label>
+      <label class="item item-input" id="crearAnuncio-input19">
+        <span class="input-label">Edad máxima</span>
+        <input type="number" placeholder="" ng-model="postData.edadMaxima">
+      </label>
+    </form>
+    <h4 id="crearAnuncio-heading30" style="color:#FFFFFF;">Ciudad</h4>
+    <ion-list>
+      <ion-checkbox ng-repeat="ciudad in ciudades" ng-model="ciudadesSeleccionadas[ciudad.$id]" class="checkbox-square">{{ciudad.$id}}</ion-checkbox>
+    </ion-list>
+    <div class="spacer" style="width: 300px; height: 58px;"></div>
+    <button id="crearAnuncio-button100" ng-show="!noticia_id" ng-click="enviarPromocion()" class="button button-positive button-block">Enviar Promoción</button>
+    <button id="crearAnuncio-button108" ng-show="editando" ng-click="guardarPromocion()" class="button button-positive button-block">Guardar Anuncio</button>
+  </ion-content>
+</ion-view>

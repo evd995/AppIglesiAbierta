@@ -1,0 +1,18 @@
+<ion-view title="Solicitudes" id="page15">
+  <ion-content padding="true" class="has-header">
+    <div ng-repeat="solicitud in solicitudes">
+      <div class="list card" style="margin-bottom: 0;">
+        <ion-item class="item-thumbnail-left comunidad-en-menu" on-hold="showAction()" on-double-tap="showPopup()" ui-sref="{{redireccionar.single[categoria]}}({comunidad: solicitud.$id})">
+          <img src="{{solicitud.logo || logos.Default}}">
+          <h2>{{solicitud.titulo}}</h2>
+          <p style="white-space:normal;">{{formatTipo(solicitud.tipo)}}</p>
+        </ion-item>
+      </div>
+      <div class="row">
+        <button class="col button button-positive button-block" style="margin: 10px 5px; padding: 4px; line-height: normal; height: fit-content; min-height:fit-content; font-size: 1em;" ng-click="pedirInformacion(&quot;aceptar&quot;, solicitud.$id)">Aceptar</button>
+        <button class="col button button-positive button-block" style="margin: 10px 5px; padding: 4px; line-height: normal; height: fit-content; min-height:fit-content; font-size: 1em;" ng-click="pedirInformacion(&quot;suspender&quot;, solicitud.$id)">Suspender</button>
+        <button class="col button button-positive button-block" style="margin: 10px 5px; padding: 4px; line-height: normal; height: fit-content; min-height:fit-content; font-size: 1em;" ng-click="pedirInformacion(&quot;rechazar&quot;, solicitud.$id)">Rechazar</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

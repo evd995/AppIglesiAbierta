@@ -1,0 +1,17 @@
+<ion-view title="Enviar Código" cache-view="false" id="page12">
+  <ion-content padding="true" class="has-header">
+    <div class="spacer" style="width: 300px; height: 12px;"></div>
+    <div id="enviarCDigo-container4">
+      <h2 id="enviarCDigo-heading2" style="color:#FFFFFF;">Ingrese su número de teléfono</h2>
+      <form id="enviarCDigo-form4" class="list">
+        <div class="spacer" style="width: 300px; height: 30px;"></div>
+        <label class="item item-input phone_input" id="enviarCDigo-input7">
+          <span class="input-label">Numero</span>
+          <input type="tel" placeholder="Ej: +569xxxxxxxx" ng-model="data.phoneNum">
+        </label>
+      </form>
+    </div>
+    <div id="send_code_div"></div>
+    <button id="enviarCDigo-button18" ng-click="enviarCodigo()" class="button button-stable button-block">Enviar Código</button>
+  </ion-content>
+</ion-view>

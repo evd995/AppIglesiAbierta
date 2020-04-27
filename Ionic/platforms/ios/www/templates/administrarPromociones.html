@@ -1,0 +1,18 @@
+<ion-view title="Administrar Promociones" id="page35">
+  <ion-content padding="true" class="has-header">
+    <div ng-repeat="solicitud in solicitudes">
+      <div class="list card" style="margin-bottom: 0;">
+        <ion-item class="item-avatar comunidad-en-menu" ui-sref="crearAnuncio({noticia_id: solicitud.$id, tipo_anuncio: solicitud.tipo})">
+          <img src="{{solicitud.imagen}}">
+          <h2>{{solicitud.titulo}}</h2>
+          <p style="white-space:normal;">{{solicitud.subtitulo}}</p>
+        </ion-item>
+      </div>
+      <div class="row">
+        <button class="col button button-positive button-block" style="margin: 10px 5px; padding: 4px; line-height: normal; height: fit-content; min-height:fit-content; font-size: 1em;" ng-click="pedirInformacion(&quot;aceptar&quot;, solicitud)">Aceptar</button>
+
+        <button class="col button button-positive button-block" style="margin: 10px 5px; padding: 4px; line-height: normal; height: fit-content; min-height:fit-content; font-size: 1em;" ng-click="pedirInformacion(&quot;rechazar&quot;, solicitud)">Rechazar</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

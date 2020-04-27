@@ -1,0 +1,28 @@
+<ion-view title="Administrar Ciudad" id="page32">
+  <ion-content padding="true" class="has-header">
+    <div id="administrarCiudad-markdown45" class="show-list-numbers-and-dots">
+      <p style="color:#FFFFFF;">Estas son todas las comunidades e instancias que están en tu ciudad. Mantén presionado para gestionar.</p>
+    </div>
+    <form id="administrarCiudad-form9" class="list">
+      <label class="item item-select" id="administrarCiudad-select12">
+        <span class="input-label">Categoría</span>
+        <select ng-options="cat.id as cat.displayName for cat in categorias" ng-model="data.categoria" ng-change="loadData(data.categoria)"></select>
+      </label>
+      <label class="item item-input" id="administrarCiudad-search4">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="Nombre" ng-model="data.buscador">
+      </label>
+    </form>
+    <button class="button button-balanced button-block" ui-sref="solicitudes({categoria: data.categoria, ciudad: data.ciudad})">Ver solititudes
+      <span class="badge badge-assertive solicitudes-badge">{{solicitudes.length}}</span>
+    </button>
+    <ion-list>
+      <ion-item ng-repeat="comunidad in comunidades | filter: {titulo: data.buscador} " class="item-thumbnail-left comunidad-en-menu item-icon-right" ui-sref="{{redireccionar.single[data.categoria]}}({comunidad: comunidad.$id , ver_comentario: false})" on-hold="abrirOpciones(&quot;aceptadas&quot;, comunidad.$id)">
+        <img src="{{comunidad.logo || logos.Default}}">
+        <h2>{{comunidad.titulo}}</h2>
+        <p>{{formatTipo(comunidad.tipo)}}</p>
+        <i class="icon ion-locked" ng-show="comunidad.estaOculto"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
